@@ -32,14 +32,12 @@ function kontakteLaden() {
 			div.innerHTML = tabellenCode;
 		}
 	};
-	
+
 	document.getElementById("gruppenDiv").innerHTML = "<h3> Aktuelle besteht die Gruppe aus folgenden Teilnehmern: </h3>";
-	
+
 };
 
 function hinzufuegen(name) {
-	// var button = document.getElementById("button1"+ name);
-	// button.disabled=true;
 	var dopplung = false;
 	$('#gruppe li').each(function() {
 		if (this.innerHTML == name) {
@@ -58,6 +56,11 @@ function hinzufuegen(name) {
 };
 
 function entfernen(name) {
-	mitglied = document.getElementById(name);
-	mitglied.parentNode.removeChild(mitglied);
+
+	$('#gruppe li').each(function() {
+		if (this.innerHTML == name) {
+			mitglied = document.getElementById(name);
+			mitglied.parentNode.removeChild(mitglied);
+		}
+	});
 };
